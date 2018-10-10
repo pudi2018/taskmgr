@@ -3,6 +3,7 @@ import { MatSidenavModule, MatToolbarModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 
@@ -15,7 +16,8 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     BrowserAnimationsModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

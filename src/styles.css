@@ -12,3 +12,9 @@ main {
     flex:1;
 }
 body { margin: 0; font-family: 'Roboto', sans-serif; }
+.fill-width {
+    width: 100%;
+}
+.fill-remaining-space{
+    flex: 1 1 auto;
+}
