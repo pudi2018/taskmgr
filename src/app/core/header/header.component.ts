@@ -7,7 +7,12 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  /**
+   * 侧边栏显示隐藏方法
+   */
   @Output() toggle = new EventEmitter();
+
+  @Output() toggleDarkTheme = new EventEmitter();
   constructor() {}
 
   ngOnInit() {
@@ -16,5 +21,7 @@ export class HeaderComponent implements OnInit {
   openSidebar() {
     this.toggle.emit();
   }
-
+  onChange(checked: boolean) {
+    this.toggleDarkTheme.emit(checked);
+  }
 }

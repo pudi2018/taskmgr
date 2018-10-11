@@ -1,11 +1,12 @@
 mat-card {
+    height: 25em;
     width: 20em;
     margin: 5px 5px;
     flex: 0 0 20em;
 }
 form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
