@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-new-project',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-project.component.css']
 })
 export class NewProjectComponent implements OnInit {
-
-  constructor() { }
+  title = '';
+  constructor(
+    @Inject(MAT_DIALOG_DATA) private data,
+    private dialogRef: MatDialogRef<NewProjectComponent>,
+  ) { }
 
   ngOnInit() {
+    this.title = this.data.title;
+  }
+
+  onClick() {
+    this.dialogRef.close('I received your message');
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 
+import { InviteComponent } from '../invite/invite.component';
 import { NewProjectComponent } from '../new-project/new-project.component';
 
 @Component({
@@ -25,9 +26,29 @@ export class ProjectListComponent implements OnInit {
 
   ngOnInit() {}
   openNewProjectDialog() {
-    this.dialog.open(NewProjectComponent, {
-      height: '300px',
-      width: '300px',
+    // this.dialog.open(NewProjectComponent, {
+    //   height: '300px',
+    //   width: '300px',
+    // });
+    const dialogRef = this.dialog.open(NewProjectComponent, {data: {
+      dark: true,
+      title: '新增项目'
+    }});
+    dialogRef.afterClosed().subscribe(paramName => {
+      console.log(paramName);
     });
+  }
+  launchInviteDialog() {
+    const dialogRef = this.dialog.open(InviteComponent, {data: {
+      dark: true,
+    }});
+    dialogRef.afterClosed().subscribe(paramName => {
+      console.log(paramName);
+    });
+  }
+  launchUpdateDialog() {
+    const dialogRef = this.dialog.open(NewProjectComponent, {data: {
+      title: '编辑项目'
+    }});
   }
 }
