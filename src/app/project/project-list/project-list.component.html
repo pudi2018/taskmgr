@@ -2,6 +2,7 @@
   <app-project-item [item]="project"
                     (invite)="launchInviteDialog()"
                     (edit)="launchUpdateDialog()"
+                    (delete)="launchConfirmDialogs()"
                     class="card"></app-project-item>
 </ng-container>
 <button class="fab-button" type="button" mat-fab (click)="openNewProjectDialog()">

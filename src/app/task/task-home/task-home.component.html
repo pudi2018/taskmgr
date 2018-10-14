@@ -3,12 +3,14 @@
                  class="list-container">
     <app-task-header [header]="list.name"
                      (newTask)="launchNewTaskDialog()"
-                     (moveAll)="launchCopyTaskDialog()"></app-task-header>
+                     (moveAll)="launchCopyTaskDialog()"
+                     (delList)="launchConfirmDialog()"
+                     (editList)="launchEditListDialog('更改列表名称')"></app-task-header>
     <app-task-item *ngFor="let task of list?.tasks"
                    [item]="task"
                    (taskClick)="launchUpdateTaskDialog(task)"></app-task-item>
   </app-task-list>
 </div>
-<button class="fab-button" type="button" mat-fab>
+<button class="fab-button" type="button" mat-fab (click)="launchEditListDialog('新增列表')">
   <mat-icon>add</mat-icon>
 </button>
