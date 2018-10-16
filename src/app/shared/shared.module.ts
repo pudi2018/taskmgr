@@ -16,6 +16,7 @@ import {
   MatNativeDateModule,
   MatRadioModule,
   MatSelectModule,
+  MatSidenavModule,
   MatSlideToggleModule,
   MatToolbarModule,
   MatTooltipModule,
@@ -46,6 +47,7 @@ import {
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    MatSidenavModule,
   ],
   exports: [
     CommonModule,
@@ -57,6 +59,7 @@ import {
     MatAutocompleteModule,
     MatTooltipModule,
     MatMenuModule,
+    MatSidenavModule,
     MatGridListModule,
     MatDialogModule,
     MatSlideToggleModule,

@@ -1,15 +1,15 @@
 
 <mat-drawer-container [class.myapp-dark-theme]="darkTheme">
   <mat-drawer #sidenav position="start" mode="over">
-    <app-sidebar></app-sidebar>
+    <app-sidebar (navClick)="sidenav.toggle()"></app-sidebar>
   </mat-drawer>
   <div class="site">
     <header>
       <app-header (toggleDarkTheme)="switchTheme($event)" (toggle)="sidenav.toggle()"></app-header>
     </header>
     <main>
-      <div class="square" [@square]="squareState" (click)="onClick()"></div>
-      <!-- <router-outlet></router-outlet> -->
+      <!-- <div class="square" [@square]="squareState" (click)="onClick()"></div> -->
+      <router-outlet></router-outlet>
     </main>
     <footer>
       <app-footer></app-footer>
