@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '../shared/shared.module';
 import { LoginRoutingModule } from './login-routing.module';
@@ -9,6 +10,8 @@ import { RegisterComponent } from './register/register.component';
   imports: [
     SharedModule,
     LoginRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     LoginComponent,

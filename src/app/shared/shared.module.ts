@@ -22,9 +22,13 @@ import {
   MatTooltipModule,
 } from '@angular/material';
 
+import { DirectiveModule } from '../directive/directive.module';
 import {
   ConfirmDialogComponent,
 } from './confirm-dialog/confirm-dialog.component';
+import {
+  ImageListSelectComponent,
+} from './image-list-select/image-list-select.component';
 
 @NgModule({
   imports: [
@@ -48,6 +52,7 @@ import {
     MatNativeDateModule,
     MatSelectModule,
     MatSidenavModule,
+    DirectiveModule,
   ],
   exports: [
     CommonModule,
@@ -70,8 +75,10 @@ import {
     MatInputModule,
     MatFormFieldModule,
     MatListModule,
+    DirectiveModule,
+    ImageListSelectComponent,
   ],
-  declarations: [ConfirmDialogComponent],
+  declarations: [ConfirmDialogComponent, ImageListSelectComponent],
   entryComponents: [
     ConfirmDialogComponent
   ]

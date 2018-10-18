@@ -13,10 +13,11 @@ import { NewTaskComponent } from '../new-task/new-task.component';
   selector: 'app-task-home',
   templateUrl: './task-home.component.html',
   styleUrls: ['./task-home.component.css'],
-  animations: [ slideToRight ]
+  animations: [slideToRight]
 })
 export class TaskHomeComponent implements OnInit {
-  @HostBinding('@routerAnim') state;
+  @HostBinding('@routerAnim')
+  state;
 
   lists = [
     {
@@ -59,7 +60,7 @@ export class TaskHomeComponent implements OnInit {
             avatar: 'avatars:svg-13'
           },
           dueDate: new Date()
-        },
+        }
       ]
     },
     {
@@ -102,41 +103,62 @@ export class TaskHomeComponent implements OnInit {
             avatar: 'avatars:svg-13'
           },
           dueDate: new Date()
-        },
+        }
       ]
     }
   ];
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
   launchNewTaskDialog() {
-    this.dialog.open(NewTaskComponent, {data: {
-      title: '新建任务'
-    }});
+    this.dialog.open(NewTaskComponent, {
+      data: {
+        title: '新建任务'
+      }
+    });
   }
   launchCopyTaskDialog() {
-    const dialogRef = this.dialog.open(CopyTaskComponent, { data: {lists: this.lists}});
+    const dialogRef = this.dialog.open(CopyTaskComponent, {
+      data: { lists: this.lists }
+    });
 
-    dialogRef.afterClosed().subscribe(result => {});
+    dialogRef.afterClosed().subscribe((result) => {});
   }
   launchUpdateTaskDialog(task) {
-    const dialogRef = this.dialog.open(NewTaskComponent, {data: {
-      title: '修改任务',
-      task: task
-    }});
+    const dialogRef = this.dialog.open(NewTaskComponent, {
+      data: {
+        title: '修改任务',
+        task: task
+      }
+    });
   }
   launchConfirmDialog() {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent, {data: {
-      title: '删除任务列表',
-      content: '您确认删除该任务列表吗？',
-    }});
-    dialogRef.afterClosed().subscribe(result => console.log(result));
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
+        title: '删除任务列表',
+        content: '您确认删除该任务列表吗？'
+      }
+    });
+    dialogRef.afterClosed().subscribe((result) => console.log(result));
   }
   launchEditListDialog(title: string) {
-    const dialogRef = this.dialog.open(NewTaskListComponent, {data: {
-      title: title,
-    }});
-    dialogRef.afterClosed().subscribe(result => console.log(result));
+    const dialogRef = this.dialog.open(NewTaskListComponent, {
+      data: {
+        title: title
+      }
+    });
+    dialogRef.afterClosed().subscribe((result) => console.log(result));
+  }
+  handleMove(srcData, list) {
+    switch (srcData.tag) {
+      case 'task-item':
+        console.log('item');
+        break;
+      case 'task-list':
+        console.log('list');
+        break;
+      default:
+        break;
+    }
   }
 }

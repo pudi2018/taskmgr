@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
+
 @NgModule({
   imports: [
     SharedModule,
@@ -28,7 +29,12 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     FooterComponent,
     SidebarComponent,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+  ],
+  providers: [
+    {provide: 'BASE_CONFIG', useValue: {
+      url: 'http://localhost:3000',
+    }}
   ]
 })
 export class CoreModule {

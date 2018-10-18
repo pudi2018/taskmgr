@@ -16,3 +16,6 @@
   bottom: 96px;
   z-index: 998;
 }
+.drag-enter {
+  background-color: dimgray;
+}

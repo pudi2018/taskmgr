@@ -1,5 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -12,7 +14,7 @@ import { TaskModule } from './task/task.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +25,8 @@ import { TaskModule } from './task/task.module';
     TaskModule,
     LoginModule,
     SharedModule,
+    HttpClientModule,
+    HttpModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
