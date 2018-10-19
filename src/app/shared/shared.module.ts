@@ -1,8 +1,12 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import {
   MatAutocompleteModule,
   MatButtonModule,
+  MatButtonToggleModule,
   MatCardModule,
   MatCheckboxModule,
   MatDatepickerModule,
@@ -23,6 +27,7 @@ import {
 } from '@angular/material';
 
 import { DirectiveModule } from '../directive/directive.module';
+import { AgeInputComponent } from './age-input/age-input.component';
 import {
   ConfirmDialogComponent,
 } from './confirm-dialog/confirm-dialog.component';
@@ -53,6 +58,11 @@ import {
     MatSelectModule,
     MatSidenavModule,
     DirectiveModule,
+    MatButtonToggleModule,
+    HttpClientModule,
+    HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     CommonModule,
@@ -62,6 +72,7 @@ import {
     MatDatepickerModule,
     MatNativeDateModule,
     MatAutocompleteModule,
+    MatButtonToggleModule,
     MatTooltipModule,
     MatMenuModule,
     MatSidenavModule,
@@ -77,10 +88,17 @@ import {
     MatListModule,
     DirectiveModule,
     ImageListSelectComponent,
+    AgeInputComponent,
+    HttpClientModule,
+    HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  declarations: [ConfirmDialogComponent, ImageListSelectComponent],
-  entryComponents: [
-    ConfirmDialogComponent
-  ]
+  declarations: [
+    ConfirmDialogComponent,
+    ImageListSelectComponent,
+    AgeInputComponent
+  ],
+  entryComponents: [ConfirmDialogComponent]
 })
-export class SharedModule { }
+export class SharedModule {}

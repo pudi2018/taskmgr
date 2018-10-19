@@ -12,9 +12,7 @@ export class RegisterComponent implements OnInit {
    * 头像集合
    */
   items: string[] = [];
-  constructor(
-    private fb: FormBuilder
-  ) {}
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     const img = `avatars:svg-${Math.floor(Math.random() * 16).toFixed(0)}`;
@@ -27,11 +25,15 @@ export class RegisterComponent implements OnInit {
       password: ['', Validators.required],
       repeat: ['', Validators.required],
       avatar: [img],
+      dateOfBirth: []
     });
   }
 
   onSubmit({ value, valid }, ev: Event) {
     ev.preventDefault();
+    if (!valid) {
+      return;
+    }
     console.log(JSON.stringify(value));
   }
 }
