@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 
+import { ProjectService } from '../services/project.service';
 import { SharedModule } from '../shared/shared.module';
 import { InviteComponent } from './invite/invite.component';
 import { NewProjectComponent } from './new-project/new-project.component';
@@ -21,6 +22,7 @@ import { ProjectRoutingModule } from './project.routing.module';
   entryComponents: [
     NewProjectComponent,
     InviteComponent,
-  ]
+  ],
+  providers: [ProjectService]
 })
 export class ProjectModule { }

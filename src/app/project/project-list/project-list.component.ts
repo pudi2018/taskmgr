@@ -2,6 +2,8 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { listAnimation } from 'src/app/animat/list.anim';
 import { slideToRight } from 'src/app/animat/router.anim';
+import { Project } from 'src/app/domain';
+import { ProjectService } from 'src/app/services/project.service';
 import {
   ConfirmDialogComponent,
 } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
@@ -16,24 +18,13 @@ import { NewProjectComponent } from '../new-project/new-project.component';
   animations: [ slideToRight, listAnimation ]
 })
 export class ProjectListComponent implements OnInit {
-  projects = [
-    {
-      id: 1,
-      name: '企业协作平台',
-      desc: '这是一个企业内部项目',
-      coverImg: 'assets/img/covers/0.jpg'
-    },
-    {
-      id: 2,
-      name: '企业协作平台',
-      desc: '这是一个企业内部项目',
-      coverImg: 'assets/img/covers/1.jpg'
-    },
-  ];
-  constructor(private dialog: MatDialog) {}
+  projects: Project[] = [];
+  constructor(private dialog: MatDialog, private service$: ProjectService) {}
 
   @HostBinding('@routerAnim') state;
-  ngOnInit() {}
+  ngOnInit() {
+    this.service$.get('1').subscribe(projects => this.projects = projects);
+  }
   openNewProjectDialog() {
     // this.dialog.open(NewProjectComponent, {
     //   height: '300px',
@@ -56,7 +47,7 @@ export class ProjectListComponent implements OnInit {
         name: '又一个新项目',
         desc: '这又是一个新项目',
         coverImg: 'assets/img/covers/3.jpg'
-      }];
+      }] as Project[];
     });
   }
   launchInviteDialog() {
