@@ -13,6 +13,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   imports: [
+
     SharedModule,
     HttpClientModule,
     BrowserAnimationsModule,
