@@ -52,4 +52,14 @@ export class LoginComponent implements OnInit {
       emailNotVaild: 'The email must start with wang'
     };
   }
+  // onKey(event: Event, form: FormGroup, name: string) {
+  //   const value = event.target.value;
+  //   const reg = /^\d*\.{0,1}\d{0,1}$/;
+  //   if (reg.test(value)) {
+  //     form.get(name).setValue(value);
+  //   } else {
+  //     form.get(name).setValue('');
+  //   }
+  //   console.log();
+  // }
 }
